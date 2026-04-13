@@ -1,6 +1,7 @@
 "use client"
 import { useState } from "react";
 import { FaShoppingCart } from "react-icons/fa";
+import AnimatedWrapper from "../components/AnimatedWrapper";
 
 export default function Menu() {
   const [selectedCategory, setSelectedCategory] = useState("espresso");
@@ -161,10 +162,10 @@ export default function Menu() {
         <div className="absolute inset-0 bg-gradient-to-t from-orange-900/20 to-transparent"></div>
         
         <div className="relative h-full flex =items-center justify-center text-center text-slate-900">
-          <div>
+          <AnimatedWrapper direction="down">
             <h1 className="section-title text-4xl md:text-6xl font-bold mb-4">OUR MENU</h1>
             <p className="text-lg md:text-xl text-slate-600">Jelajahi koleksi kopi dan makanan pilihan kami</p>
-          </div>
+          </AnimatedWrapper>
         </div>
       </section>
 
@@ -177,6 +178,7 @@ export default function Menu() {
       <section className="py-12 px-4 border-t border-black/20">
         <div className="container mx-auto">
           {/* Category Tabs */}
+          <AnimatedWrapper direction="up">
           <div className="flex flex-wrap justify-center gap-2 mb-12 pb-8 border-b border-black/10">
             {categories.map((category) => (
               <button
@@ -192,13 +194,14 @@ export default function Menu() {
               </button>
             ))}
           </div>
+          </AnimatedWrapper>
 
           {/* Menu Items Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {currentCategory.map((item, index) => (
+              <AnimatedWrapper key={index} direction={index % 3 === 0 ? "left" : index % 3 === 1 ? "up" : "right"} delay={index * 0.1}>
               <div
-                key={index}
-                className="bg-white overflow-hidden transition-all duration-300 group border-2 border-black/30 hover:border-black/50"
+                className="bg-white overflow-hidden transition-all duration-300 group border-2 border-black/30 hover:border-black/50 h-full"
               >
                 {/* Image */}
                 <div className="relative h-48 overflow-hidden bg-slate-100/15">
@@ -211,12 +214,12 @@ export default function Menu() {
                 </div>
 
                 {/* Content */}
-                <div className="p-5 border-t-2 border-black/30">
+                <div className="p-5 border-t-2 border-black/30 flex flex-col h-[calc(100%-12rem)]">
                   <h3 className="text-lg font-bold text-slate-900 mb-2">{item.name}</h3>
-                  <p className="text-sm text-slate-600 mb-4">{item.description}</p>
+                  <p className="text-sm text-slate-600 mb-4 flex-grow">{item.description}</p>
                   <div className="h-px bg-black/10 mb-4"></div>
                   
-                  <div className="flex items-center justify-between">
+                  <div className="flex items-center justify-between mt-auto">
                     <span className="text-lg font-bold text-slate-900">{item.price}</span>
                     <button className="flex items-center gap-2 bg-slate-200/60 hover:bg-slate-200 text-slate-900 px-4 py-2 font-medium transition-colors duration-300 border border-black/30">
                       <FaShoppingCart className="text-sm" />
@@ -225,6 +228,7 @@ export default function Menu() {
                   </div>
                 </div>
               </div>
+              </AnimatedWrapper>
             ))}
           </div>
         </div>
@@ -237,7 +241,7 @@ export default function Menu() {
 
       {/* Call to Action */}
       <section className="py-16 px-4 bg-white border-t-2 border-b-2 border-black/20">
-        <div className="container mx-auto text-center">
+        <AnimatedWrapper direction="up" className="container mx-auto text-center">
           <h2 className="section-title text-3xl md:text-4xl font-bold mb-4 text-slate-900">Tidak Menemukan Favorit Anda?</h2>
           <p className="text-lg mb-8 text-slate-600">Hubungi kami untuk menu custom atau request khusus</p>
           <a
@@ -248,7 +252,7 @@ export default function Menu() {
           >
             Chat WhatsApp Kami
           </a>
-        </div>
+        </AnimatedWrapper>
       </section>
     </main>
   );

@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { FaFacebook, FaInstagram, FaTwitter, FaWhatsapp } from "react-icons/fa";
 import { MdEmail, MdPhone, MdLocationOn } from "react-icons/md";
+import AnimatedWrapper from "./AnimatedWrapper";
 
 export default function Footer() {
   return (
@@ -11,6 +12,7 @@ export default function Footer() {
         <div className="container mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
             {/* Brand Section */}
+            <AnimatedWrapper direction="up" delay={0.1}>
             <div>
               <h3 className="section-title text-2xl font-bold mb-4 text-slate-300">
                 JJ Coffee
@@ -33,8 +35,10 @@ export default function Footer() {
                 </a>
               </div>
             </div>
+            </AnimatedWrapper>
 
             {/* Quick Links */}
+            <AnimatedWrapper direction="up" delay={0.2}>
             <div>
               <h4 className="font-bold text-lg mb-4 pb-2 relative">
                 Menu
@@ -63,8 +67,10 @@ export default function Footer() {
                 </li>
               </ul>
             </div>
+            </AnimatedWrapper>
 
             {/* Services */}
+            <AnimatedWrapper direction="up" delay={0.3}>
             <div>
               <h4 className="font-bold text-lg mb-4 pb-2 relative">
                 Layanan
@@ -93,8 +99,10 @@ export default function Footer() {
                 </li>
               </ul>
             </div>
+            </AnimatedWrapper>
 
             {/* Contact Info */}
+            <AnimatedWrapper direction="up" delay={0.4}>
             <div>
               <h4 className="font-bold text-lg mb-4 pb-2 relative">
                 Hubungi Kami
@@ -119,12 +127,14 @@ export default function Footer() {
                 </li>
               </ul>
             </div>
+            </AnimatedWrapper>
           </div>
 
           {/* Divider */}
           <div className="border-t border-slate-700 my-8"></div>
 
           {/* Newsletter */}
+          <AnimatedWrapper direction="up">
           <div className="bg-slate-800 rounded-sm p-6 mb-8">
             <div className="max-w-2xl mx-auto text-center">
               <h3 className="font-bold text-lg mb-2">Dapatkan Penawaran Spesial</h3>
@@ -141,11 +151,13 @@ export default function Footer() {
               </div>
             </div>
           </div>
+          </AnimatedWrapper>
 
           {/* Divider */}
           <div className="border-t border-slate-700 my-8"></div>
 
           {/* Bottom Footer */}
+          <AnimatedWrapper direction="up">
           <div className="flex flex-col md:flex-row justify-between items-center text-slate-400 text-sm">
             <p>&copy; 2026 JJ Coffee. All rights reserved.</p>
             <div className="flex gap-6 mt-4 md:mt-0">
@@ -160,6 +172,7 @@ export default function Footer() {
               </Link>
             </div>
           </div>
+          </AnimatedWrapper>
         </div>
       </div>
     </footer>

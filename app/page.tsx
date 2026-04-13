@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { MdEmail, MdPhone, MdLocationOn } from "react-icons/md";
 import { FaWhatsapp, FaClock, FaShoppingCart } from "react-icons/fa";
-
+import AnimatedWrapper from "./components/AnimatedWrapper";
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
 
@@ -209,16 +209,18 @@ export default function Home() {
       <section className="py-16 px-4 border-t-2 border-b-2 border-black/20">
         <div className="container mx-auto">
           <div className="flex flex-col items-center mb-12 pb-8 border-b-2 border-black/10">
-            <h2 className="section-title text-3xl md:text-4xl font-bold text-slate-900 text-center">
-              Koleksi Kopi Kami
-            </h2>
+            <AnimatedWrapper direction="down">
+              <h2 className="section-title text-3xl md:text-4xl font-bold text-slate-900 text-center">
+                Koleksi Kopi Kami
+              </h2>
+            </AnimatedWrapper>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {coffeeCollection.map((coffee, index) => (
+              <AnimatedWrapper key={index} direction={index % 2 === 0 ? "left" : "right"} delay={index * 0.1}>
               <div
-                key={index}
-                className="aspect-square overflow-hidden relative group cursor-pointer border-2 border-black/30 hover:border-black/50"
+                className="aspect-square w-full h-full overflow-hidden relative group cursor-pointer border-2 border-black/30 hover:border-black/50"
               >
                 <div
                   className="absolute inset-0 bg-cover bg-center bg-no-repeat brightness-100 group-hover:brightness-110 transition-all duration-300"
@@ -252,6 +254,7 @@ export default function Home() {
                   </div>
                 </div>
               </div>
+              </AnimatedWrapper>
             ))}
           </div>
         </div>
@@ -262,7 +265,7 @@ export default function Home() {
         <div className="container mx-auto">
           <div className="flex flex-col md:flex-row items-center justify-between gap-12 md:gap-16">
             {/* Image Left */}
-            <div className="flex-1 relative order-2 md:order-1">
+            <AnimatedWrapper direction="left" className="flex-1 relative order-2 md:order-1">
               <div className="aspect-video overflow-hidden border-2 border-black/30">
                 <div
                   className="w-full h-full bg-cover bg-center bg-no-repeat relative"
@@ -273,10 +276,10 @@ export default function Home() {
                   <div className="absolute inset-0 bg-black/30"></div>
                 </div>
               </div>
-            </div>
+            </AnimatedWrapper>
 
             {/* Text Right */}
-            <div className="flex-1 text-center md:text-left order-1 md:order-2">
+            <AnimatedWrapper direction="right" delay={0.2} className="flex-1 text-center md:text-left order-1 md:order-2">
               <h2 className="section-title text-3xl md:text-4xl font-bold text-slate-900 mb-4">
                 Our Menu
               </h2>
@@ -293,7 +296,7 @@ export default function Home() {
               >
                 Lihat Menu Lengkap →
               </Link>
-            </div>
+            </AnimatedWrapper>
           </div>
         </div>
       </section>
@@ -302,20 +305,24 @@ export default function Home() {
       <section className="py-16 px-4 bg-white border-t-2 border-b-2 border-black/20">
         <div className="container mx-auto">
           <div className="flex flex-col items-center mb-12 pb-8 border-b-2 border-black/10">
-            <h2 className="section-title text-3xl md:text-4xl font-bold text-slate-900 text-center">
-              Kunjungi Kami
-            </h2>
-            <p className="text-slate-600 text-center max-w-2xl mt-6">Temukan kami di lokasi-lokasi strategis di kota. Kunjungi toko kami yang nyaman dan rasakan pengalaman kopi yang luar biasa.</p>
+            <AnimatedWrapper direction="down">
+              <h2 className="section-title text-3xl md:text-4xl font-bold text-slate-900 text-center">
+                Kunjungi Kami
+              </h2>
+            </AnimatedWrapper>
+            <AnimatedWrapper direction="up" delay={0.2}>
+              <p className="text-slate-600 text-center max-w-2xl mt-6">Temukan kami di lokasi-lokasi strategis di kota. Kunjungi toko kami yang nyaman dan rasakan pengalaman kopi yang luar biasa.</p>
+            </AnimatedWrapper>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             {/* Map */}
-            <div className="overflow-hidden h-96 md:h-[450px] border-2 border-black/20">
+            <AnimatedWrapper direction="left" className="overflow-hidden h-96 md:h-[450px] border-2 border-black/20">
               <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15927.932490004812!2d98.7639318!3d3.5913452!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x303137ad944d411b%3A0xe5865f45d927a532!2sJJ%20Coffee!5e0!3m2!1sid!2sid!4v1776049953867!5m2!1sid!2sid" width="100%" height="100%" style={{border: 0}} allowFullScreen={true} loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
-            </div>
+            </AnimatedWrapper>
 
             {/* Location Info */}
-            <div className="space-y-6">
+            <AnimatedWrapper direction="right" delay={0.2} className="space-y-6">
               <div className="p-6 bg-white border-l-4 border-black hover:border-slate-800 transition-colors duration-300 border-r-2 border-t-2 border-b-2 border-black/20">
                 <h3 className="text-lg font-bold text-slate-900 mb-2">JJ Coffee - Pusat</h3>
                 <p className="text-slate-600 mb-3">Jl. Makmur Pasar 7 Tembung</p>
@@ -329,7 +336,7 @@ export default function Home() {
                 <p className="text-sm text-slate-500 mb-3">Senin - Minggu: 09:00 - 22:00</p>
                 <a href="https://wa.me/6281234567890" className="text-slate-600 font-medium hover:text-slate-700 transition-colors">Hubungi Kami →</a>
               </div>
-            </div>
+            </AnimatedWrapper>
           </div>
         </div>
       </section>
@@ -338,15 +345,20 @@ export default function Home() {
       <section className="py-16 px-4 bg-white border-b-2 border-black/20">
         <div className="container mx-auto">
           <div className="flex flex-col items-center mb-12 pb-8 border-b-2 border-black/10">
-            <h2 className="section-title text-3xl md:text-4xl font-bold text-slate-900 text-center">
-              Hubungi Kami
-            </h2>
-            <p className="text-slate-600 text-center max-w-2xl mt-6">Kami siap membantu Anda. Hubungi kami melalui berbagai channel yang tersedia.</p>
+            <AnimatedWrapper direction="down">
+              <h2 className="section-title text-3xl md:text-4xl font-bold text-slate-900 text-center">
+                Hubungi Kami
+              </h2>
+            </AnimatedWrapper>
+            <AnimatedWrapper direction="up" delay={0.2}>
+              <p className="text-slate-600 text-center max-w-2xl mt-6">Kami siap membantu Anda. Hubungi kami melalui berbagai channel yang tersedia.</p>
+            </AnimatedWrapper>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {/* Email */}
-            <div className="p-6 bg-white border-2 border-black/20 hover:border-black/40 transition-all duration-300 cursor-pointer group">
+            <AnimatedWrapper direction="up" delay={0.1}>
+            <div className="h-full p-6 bg-white border-2 border-black/20 hover:border-black/40 transition-all duration-300 cursor-pointer group">
               <div className="text-slate-600 text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">
                 <MdEmail />
               </div>
@@ -358,9 +370,11 @@ export default function Home() {
                 info@jjcoffee.com →
               </a>
             </div>
+            </AnimatedWrapper>
 
             {/* WhatsApp */}
-            <div className="p-6 bg-white border-2 border-black/20 hover:border-black/40 transition-all duration-300 cursor-pointer group">
+            <AnimatedWrapper direction="up" delay={0.2}>
+            <div className="h-full p-6 bg-white border-2 border-black/20 hover:border-black/40 transition-all duration-300 cursor-pointer group">
               <div className="text-slate-600 text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">
                 <FaWhatsapp />
               </div>
@@ -372,9 +386,11 @@ export default function Home() {
                 +62 812 3456 7890 →
               </a>
             </div>
+            </AnimatedWrapper>
 
             {/* Phone */}
-            <div className="p-6 bg-white border-2 border-black/20 hover:border-black/40 transition-all duration-300 cursor-pointer group">
+            <AnimatedWrapper direction="up" delay={0.3}>
+            <div className="h-full p-6 bg-white border-2 border-black/20 hover:border-black/40 transition-all duration-300 cursor-pointer group">
               <div className="text-slate-600 text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">
                 <MdPhone />
               </div>
@@ -386,9 +402,11 @@ export default function Home() {
                 (021) 555-0123 →
               </a>
             </div>
+            </AnimatedWrapper>
 
             {/* Address */}
-            <div className="p-6 bg-white border-2 border-black/20 hover:border-black/40 transition-all duration-300 cursor-pointer group">
+            <AnimatedWrapper direction="up" delay={0.4}>
+            <div className="h-full p-6 bg-white border-2 border-black/20 hover:border-black/40 transition-all duration-300 cursor-pointer group">
               <div className="text-slate-600 text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">
                 <MdLocationOn />
               </div>
@@ -400,9 +418,11 @@ export default function Home() {
                 Jl. Makmur Pasar 7 Tembung →
               </p>
             </div>
+            </AnimatedWrapper>
 
             {/* Operating Hours */}
-            <div className="p-6 bg-white border-2 border-black/20 hover:border-black/40 transition-all duration-300 cursor-pointer group col-span-1 md:col-span-2 lg:col-span-4">
+            <AnimatedWrapper direction="up" delay={0.5} className="col-span-1 md:col-span-2 lg:col-span-4">
+            <div className="w-full p-6 bg-white border-2 border-black/20 hover:border-black/40 transition-all duration-300 cursor-pointer group">
               <div className="flex items-start gap-4">
                 <div className="text-slate-600 text-4xl group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
                   <FaClock />
@@ -424,6 +444,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
+            </AnimatedWrapper>
           </div>
         </div>
       </section>

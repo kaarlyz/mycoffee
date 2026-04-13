@@ -1,6 +1,7 @@
 'use client'
 import Link from 'next/link'
 import { useState, useRef, useEffect } from 'react'
+import AnimatedWrapper from './AnimatedWrapper'
 
 const MAPS_URL = 'https://maps.google.com/?q=J+Coffee'
 
@@ -26,10 +27,11 @@ export default function Navbar() {
   ]
 
   return (
-    <nav className="bg-white text-slate-900 sticky top-0 z-50 border-b border-slate-200 shadow-sm">
-      <div className="container mx-auto px-4 pt-3 pb-1">
+    <AnimatedWrapper direction="down" className="sticky top-0 z-50">
+      <nav className="bg-white text-slate-900 border-b border-slate-200 shadow-sm">
+        <div className="container mx-auto px-4 pt-3 pb-1">
 
-        {/* Row 1 — Logo */}
+          {/* Row 1 — Logo */}
         <div className="flex justify-center">
           <Link
             href="/"
@@ -172,6 +174,7 @@ export default function Navbar() {
         </div>
 
       </div>
-    </nav>
+      </nav>
+    </AnimatedWrapper>
   )
 }
