@@ -206,9 +206,9 @@ export default function Home() {
       </section>
 
       {/* Coffee Image Gallery */}
-      <section className="py-16 px-4 border-t-2 border-b-2 border-amber-200/50">
+      <section className="py-16 px-4 border-t-2 border-b-2 border-black/20">
         <div className="container mx-auto">
-          <div className="flex flex-col items-center mb-12 pb-8 border-b-2 border-amber-200/30">
+          <div className="flex flex-col items-center mb-12 pb-8 border-b-2 border-black/10">
             <h2 className="section-title text-3xl md:text-4xl font-bold text-slate-900 text-center">
               Koleksi Kopi Kami
             </h2>
@@ -218,7 +218,7 @@ export default function Home() {
             {coffeeCollection.map((coffee, index) => (
               <div
                 key={index}
-                className="aspect-square overflow-hidden relative group cursor-pointer border-2 border-amber-200/40 hover:border-amber-300/60"
+                className="aspect-square overflow-hidden relative group cursor-pointer border-2 border-black/30 hover:border-black/50"
               >
                 <div
                   className="absolute inset-0 bg-cover bg-center bg-no-repeat brightness-100 group-hover:brightness-110 transition-all duration-300"
@@ -238,13 +238,13 @@ export default function Home() {
                     </a>
                     <div className="opacity-0 group-hover:opacity-100 transition-all duration-300">
                       <h3 className="font-bold text-sm mb-1">{coffee.title}</h3>
-                      <p className="text-xs opacity-90 mb-2">{coffee.description}</p>
-                      <p className="text-xs font-semibold text-amber-400 mb-3">{coffee.price}</p>
+                      <p className="text-xs text-gray-200 mb-2">{coffee.description}</p>
+                      <p className="text-xs font-semibold text-slate-300 mb-3">{coffee.price}</p>
                       <a
                         href={`https://wa.me/6281234567890?text=${encodeURIComponent(coffee.whatsappText)}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-block bg-amber-600 hover:bg-amber-700 text-white text-xs font-semibold px-3 py-1.5 transition-all duration-200 border border-amber-700"
+                        className="inline-block bg-slate-600 hover:bg-slate-700 text-white text-xs font-semibold px-3 py-1.5 transition-all duration-200 border border-black"
                       >
                         Beli
                       </a>
@@ -258,12 +258,12 @@ export default function Home() {
       </section>
 
       {/* Our Menu Section */}
-      <section className="py-16 px-4 bg-slate-50 border-t-2 border-b-2 border-amber-200/50">
+      <section className="py-16 px-4 bg-slate-50 border-t-2 border-b-2 border-black/20">
         <div className="container mx-auto">
           <div className="flex flex-col md:flex-row items-center justify-between gap-12 md:gap-16">
             {/* Image Left */}
             <div className="flex-1 relative order-2 md:order-1">
-              <div className="aspect-video overflow-hidden border-2 border-amber-300/50">
+              <div className="aspect-video overflow-hidden border-2 border-black/30">
                 <div
                   className="w-full h-full bg-cover bg-center bg-no-repeat relative"
                   style={{
@@ -299,9 +299,9 @@ export default function Home() {
       </section>
 
       {/* Map Section */}
-      <section className="py-16 px-4 bg-white border-t-2 border-b-2 border-amber-200/50">
+      <section className="py-16 px-4 bg-white border-t-2 border-b-2 border-black/20">
         <div className="container mx-auto">
-          <div className="flex flex-col items-center mb-12 pb-8 border-b-2 border-amber-200/30">
+          <div className="flex flex-col items-center mb-12 pb-8 border-b-2 border-black/10">
             <h2 className="section-title text-3xl md:text-4xl font-bold text-slate-900 text-center">
               Kunjungi Kami
             </h2>
@@ -310,24 +310,24 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             {/* Map */}
-            <div className="overflow-hidden h-96 md:h-[450px] border-2 border-amber-200/50">
+            <div className="overflow-hidden h-96 md:h-[450px] border-2 border-black/20">
               <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15927.932490004812!2d98.7639318!3d3.5913452!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x303137ad944d411b%3A0xe5865f45d927a532!2sJJ%20Coffee!5e0!3m2!1sid!2sid!4v1776049953867!5m2!1sid!2sid" width="100%" height="100%" style={{border: 0}} allowFullScreen={true} loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
             </div>
 
             {/* Location Info */}
             <div className="space-y-6">
-              <div className="p-6 bg-white border-l-4 border-amber-400 hover:border-amber-600 transition-colors duration-300 border-r-2 border-t-2 border-b-2 border-amber-200/50">
+              <div className="p-6 bg-white border-l-4 border-black hover:border-slate-800 transition-colors duration-300 border-r-2 border-t-2 border-b-2 border-black/20">
                 <h3 className="text-lg font-bold text-slate-900 mb-2">JJ Coffee - Pusat</h3>
                 <p className="text-slate-600 mb-3">Jl. Makmur Pasar 7 Tembung</p>
                 <p className="text-sm text-slate-500 mb-3">Senin - Minggu: 08:00 - 21:00</p>
-                <a href="https://wa.me/6281234567890" className="text-amber-600 font-medium hover:text-amber-700 transition-colors">Hubungi Kami →</a>
+                <a href="https://wa.me/6281234567890" className="text-slate-600 font-medium hover:text-slate-700 transition-colors">Hubungi Kami →</a>
               </div>
 
-              <div className="p-6 bg-white border-l-4 border-amber-400 hover:border-amber-600 transition-colors duration-300 border-r-2 border-t-2 border-b-2 border-amber-200/50">
+              <div className="p-6 bg-white border-l-4 border-black hover:border-slate-800 transition-colors duration-300 border-r-2 border-t-2 border-b-2 border-black/20">
                 <h3 className="text-lg font-bold text-slate-900 mb-2">JJ Coffee - Cabang</h3>
                 <p className="text-slate-600 mb-3">Jl. Makmur Pasar 7 Tembung</p>
                 <p className="text-sm text-slate-500 mb-3">Senin - Minggu: 09:00 - 22:00</p>
-                <a href="https://wa.me/6281234567890" className="text-amber-600 font-medium hover:text-amber-700 transition-colors">Hubungi Kami →</a>
+                <a href="https://wa.me/6281234567890" className="text-slate-600 font-medium hover:text-slate-700 transition-colors">Hubungi Kami →</a>
               </div>
             </div>
           </div>
@@ -335,9 +335,9 @@ export default function Home() {
       </section>
 
       {/* Contact Us Section */}
-      <section className="py-16 px-4 bg-white border-b-2 border-amber-200/50">
+      <section className="py-16 px-4 bg-white border-b-2 border-black/20">
         <div className="container mx-auto">
-          <div className="flex flex-col items-center mb-12 pb-8 border-b-2 border-amber-200/30">
+          <div className="flex flex-col items-center mb-12 pb-8 border-b-2 border-black/10">
             <h2 className="section-title text-3xl md:text-4xl font-bold text-slate-900 text-center">
               Hubungi Kami
             </h2>
@@ -346,79 +346,79 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {/* Email */}
-            <div className="p-6 bg-white border-2 border-amber-200/50 hover:border-amber-300/70 transition-all duration-300 cursor-pointer group">
-              <div className="text-amber-600 text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">
+            <div className="p-6 bg-white border-2 border-black/20 hover:border-black/40 transition-all duration-300 cursor-pointer group">
+              <div className="text-slate-600 text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">
                 <MdEmail />
               </div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2 pb-2 border-b border-amber-300/50">
+              <h3 className="text-lg font-bold text-slate-900 mb-2 pb-2 border-b border-black/30">
                 Email
               </h3>
               <p className="text-slate-600 text-sm mb-4">Kirim pertanyaan Anda melalui email</p>
-              <a href="mailto:info@jjcoffee.com" className="text-amber-600 font-medium hover:text-amber-700 transition-colors">
+              <a href="mailto:info@jjcoffee.com" className="text-slate-600 font-medium hover:text-slate-700 transition-colors">
                 info@jjcoffee.com →
               </a>
             </div>
 
             {/* WhatsApp */}
-            <div className="p-6 bg-white border-2 border-amber-200/50 hover:border-amber-300/70 transition-all duration-300 cursor-pointer group">
-              <div className="text-amber-600 text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">
+            <div className="p-6 bg-white border-2 border-black/20 hover:border-black/40 transition-all duration-300 cursor-pointer group">
+              <div className="text-slate-600 text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">
                 <FaWhatsapp />
               </div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2 pb-2 border-b border-amber-300/50">
+              <h3 className="text-lg font-bold text-slate-900 mb-2 pb-2 border-b border-black/30">
                 WhatsApp
               </h3>
               <p className="text-slate-600 text-sm mb-4">Chat langsung dengan customer service</p>
-              <a href="https://wa.me/6281234567890" target="_blank" rel="noopener noreferrer" className="text-amber-600 font-medium hover:text-amber-700 transition-colors">
+              <a href="https://wa.me/6281234567890" target="_blank" rel="noopener noreferrer" className="text-slate-600 font-medium hover:text-slate-700 transition-colors">
                 +62 812 3456 7890 →
               </a>
             </div>
 
             {/* Phone */}
-            <div className="p-6 bg-white border-2 border-amber-200/50 hover:border-amber-300/70 transition-all duration-300 cursor-pointer group">
-              <div className="text-amber-600 text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">
+            <div className="p-6 bg-white border-2 border-black/20 hover:border-black/40 transition-all duration-300 cursor-pointer group">
+              <div className="text-slate-600 text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">
                 <MdPhone />
               </div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2 pb-2 border-b border-amber-300/50">
+              <h3 className="text-lg font-bold text-slate-900 mb-2 pb-2 border-b border-black/30">
                 Telepon
               </h3>
               <p className="text-slate-600 text-sm mb-4">Hubungi kami secara langsung</p>
-              <a href="tel:021-555-0123" className="text-amber-600 font-medium hover:text-amber-700 transition-colors">
+              <a href="tel:021-555-0123" className="text-slate-600 font-medium hover:text-slate-700 transition-colors">
                 (021) 555-0123 →
               </a>
             </div>
 
             {/* Address */}
-            <div className="p-6 bg-white border-2 border-amber-200/50 hover:border-amber-300/70 transition-all duration-300 cursor-pointer group">
-              <div className="text-amber-600 text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">
+            <div className="p-6 bg-white border-2 border-black/20 hover:border-black/40 transition-all duration-300 cursor-pointer group">
+              <div className="text-slate-600 text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">
                 <MdLocationOn />
               </div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2 pb-2 border-b border-amber-300/50">
+              <h3 className="text-lg font-bold text-slate-900 mb-2 pb-2 border-b border-black/30">
                 Lokasi
               </h3>
               <p className="text-slate-600 text-sm mb-4">Kunjungi cabang terdekat kami</p>
-              <p className="text-amber-600 font-medium text-sm">
-                Jl. Merdeka No. 123 →
+              <p className="text-slate-600 font-medium text-sm">
+                Jl. Makmur Pasar 7 Tembung →
               </p>
             </div>
 
             {/* Operating Hours */}
-            <div className="p-6 bg-white border-2 border-amber-200/50 hover:border-amber-300/70 transition-all duration-300 cursor-pointer group col-span-1 md:col-span-2 lg:col-span-4">
+            <div className="p-6 bg-white border-2 border-black/20 hover:border-black/40 transition-all duration-300 cursor-pointer group col-span-1 md:col-span-2 lg:col-span-4">
               <div className="flex items-start gap-4">
-                <div className="text-amber-600 text-4xl group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
+                <div className="text-slate-600 text-4xl group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
                   <FaClock />
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-lg font-bold text-slate-900 mb-2 pb-2 border-b border-amber-300/50 w-fit">
+                  <h3 className="text-lg font-bold text-slate-900 mb-2 pb-2 border-b border-black/30 w-fit">
                     Jam Operasional
                   </h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-3">
                     <div>
-                      <p className="text-slate-600 text-sm"><span className="text-amber-600 font-medium">Senin - Jumat:</span> 08:00 - 21:00 WIB</p>
-                      <p className="text-slate-600 text-sm mt-1"><span className="text-amber-600 font-medium">Sabtu:</span> 07:00 - 22:00 WIB</p>
+                      <p className="text-slate-600 text-sm"><span className="text-slate-700 font-medium">Senin - Jumat:</span> 08:00 - 21:00 WIB</p>
+                      <p className="text-slate-600 text-sm mt-1"><span className="text-slate-700 font-medium">Sabtu:</span> 07:00 - 22:00 WIB</p>
                     </div>
                     <div>
-                      <p className="text-slate-600 text-sm"><span className="text-amber-600 font-medium">Minggu:</span> 08:00 - 20:00 WIB</p>
-                      <p className="text-slate-600 text-sm mt-1"><span className="text-amber-600 font-medium">Hari Libur:</span> 09:00 - 19:00 WIB</p>
+                      <p className="text-slate-600 text-sm"><span className="text-slate-700 font-medium">Minggu:</span> 08:00 - 20:00 WIB</p>
+                      <p className="text-slate-600 text-sm mt-1"><span className="text-slate-700 font-medium">Hari Libur:</span> 09:00 - 19:00 WIB</p>
                     </div>
                   </div>
                 </div>
