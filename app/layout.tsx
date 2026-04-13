@@ -28,7 +28,7 @@ const neuton = Neuton({
 })
 
 export const metadata: Metadata = {
-  title: 'J&Coffee',
+  title: 'JJ Coffee',
   description: 'Coffee shop',
 }
 

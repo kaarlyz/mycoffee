@@ -195,9 +195,9 @@ export default function Home() {
         {/* Center Text Overlay */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-20">
           <div className="text-center text-white">
-            <h1 className="section-title text-4xl md:text-6xl font-bold mb-4 drop-shadow-lg">
-              JJ Coffee
-            </h1>
+         <h1 className="font-sans text-4xl md:text-6xl font-semibold tracking-tight text-white hover:text-slate-300 transition-all duration-200 mb-4 drop-shadow-lg inline-block">
+  JJ Coffee
+</h1>
             <p className="text-lg md:text-xl drop-shadow-md max-w-2xl mx-auto px-4">
               Pengalaman kopi terbaik dengan biji kopi pilihan
             </p>
