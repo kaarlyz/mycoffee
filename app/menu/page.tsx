@@ -160,32 +160,32 @@ export default function Menu() {
         ></div>
         <div className="absolute inset-0 bg-gradient-to-t from-orange-900/20 to-transparent"></div>
         
-        <div className="relative h-full flex items-center justify-center text-center text-amber-950">
+        <div className="relative h-full flex =items-center justify-center text-center text-slate-900">
           <div>
             <h1 className="section-title text-4xl md:text-6xl font-bold mb-4">OUR MENU</h1>
-            <p className="text-lg md:text-xl text-amber-900/70">Jelajahi koleksi kopi dan makanan pilihan kami</p>
+            <p className="text-lg md:text-xl text-slate-600">Jelajahi koleksi kopi dan makanan pilihan kami</p>
           </div>
         </div>
       </section>
 
       {/* Divider Line */}
-      <div className="border-t border-b border-amber-200/50 py-3 my-2">
-        <div className="flex justify-center text-amber-300/40 text-lg">✧ ✧ ✧</div>
+      <div className="border-t border-b border-black/20 py-3 my-2">
+        <div className="flex justify-center text-slate-300 text-lg">✧ ✧ ✧</div>
       </div>
 
       {/* Menu Section */}
-      <section className="py-12 px-4 border-t border-amber-200/30">
+      <section className="py-12 px-4 border-t border-black/20">
         <div className="container mx-auto">
           {/* Category Tabs */}
-          <div className="flex flex-wrap justify-center gap-2 mb-12 pb-8 border-b border-amber-200/30">
+          <div className="flex flex-wrap justify-center gap-2 mb-12 pb-8 border-b border-black/10">
             {categories.map((category) => (
               <button
                 key={category.id}
                 onClick={() => setSelectedCategory(category.id)}
                 className={`px-6 py-2 font-medium transition-all duration-300 border ${
                   selectedCategory === category.id
-                    ? "bg-amber-100/80 text-amber-900/90 border-amber-300/60"
-                    : "bg-orange-50/30 text-amber-700/80 border-amber-200/40 hover:bg-orange-100/30 hover:border-amber-200/60"
+                    ? "bg-slate-100 text-slate-900 border-black"
+                    : "bg-white/30 text-slate-700 border-black/20 hover:bg-slate-50/30 hover:border-black/30"
                 }`}
               >
                 {category.name}
@@ -198,10 +198,10 @@ export default function Menu() {
             {currentCategory.map((item, index) => (
               <div
                 key={index}
-                className="bg-white overflow-hidden transition-all duration-300 group border-2 border-amber-200/50 hover:border-amber-300/70"
+                className="bg-white overflow-hidden transition-all duration-300 group border-2 border-black/30 hover:border-black/50"
               >
                 {/* Image */}
-                <div className="relative h-48 overflow-hidden bg-orange-100/15">
+                <div className="relative h-48 overflow-hidden bg-slate-100/15">
                   <img
                     src={item.image}
                     alt={item.name}
@@ -211,14 +211,14 @@ export default function Menu() {
                 </div>
 
                 {/* Content */}
-                <div className="p-5 border-t-2 border-amber-200/30">
-                  <h3 className="text-lg font-bold text-amber-950/90 mb-2">{item.name}</h3>
-                  <p className="text-sm text-amber-800/60 mb-4">{item.description}</p>
-                  <div className="h-px bg-amber-200/30 mb-4"></div>
+                <div className="p-5 border-t-2 border-black/30">
+                  <h3 className="text-lg font-bold text-slate-900 mb-2">{item.name}</h3>
+                  <p className="text-sm text-slate-600 mb-4">{item.description}</p>
+                  <div className="h-px bg-black/10 mb-4"></div>
                   
                   <div className="flex items-center justify-between">
-                    <span className="text-lg font-bold text-amber-800/80">{item.price}</span>
-                    <button className="flex items-center gap-2 bg-amber-100/60 hover:bg-amber-100 text-amber-900/80 px-4 py-2 font-medium transition-colors duration-300 border border-amber-300/60">
+                    <span className="text-lg font-bold text-slate-900">{item.price}</span>
+                    <button className="flex items-center gap-2 bg-slate-200/60 hover:bg-slate-200 text-slate-900 px-4 py-2 font-medium transition-colors duration-300 border border-black/30">
                       <FaShoppingCart className="text-sm" />
                       <span className="hidden sm:inline text-sm">Pesan</span>
                     </button>
@@ -231,20 +231,20 @@ export default function Menu() {
       </section>
 
       {/* Divider Line */}
-      <div className="border-t border-b border-amber-200/50 py-3 my-6">
-        <div className="flex justify-center text-amber-300/40 text-lg">✧ ✧ ✧</div>
+      <div className="border-t border-b border-black/20 py-3 my-6">
+        <div className="flex justify-center text-slate-300 text-lg">✧ ✧ ✧</div>
       </div>
 
       {/* Call to Action */}
-      <section className="py-16 px-4 bg-amber-50/30 border-t-2 border-b-2 border-amber-200/50">
+      <section className="py-16 px-4 bg-white border-t-2 border-b-2 border-black/20">
         <div className="container mx-auto text-center">
-          <h2 className="section-title text-3xl md:text-4xl font-bold mb-4 text-amber-950/90">Tidak Menemukan Favorit Anda?</h2>
-          <p className="text-lg mb-8 text-amber-900/65">Hubungi kami untuk menu custom atau request khusus</p>
+          <h2 className="section-title text-3xl md:text-4xl font-bold mb-4 text-slate-900">Tidak Menemukan Favorit Anda?</h2>
+          <p className="text-lg mb-8 text-slate-600">Hubungi kami untuk menu custom atau request khusus</p>
           <a
             href="https://wa.me/6281234567890"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block bg-amber-100/50 text-amber-900/80 px-8 py-3 font-bold hover:bg-amber-100/70 transition-colors duration-300 border-2 border-amber-300/60"
+            className="inline-block bg-slate-900 text-white px-8 py-3 font-bold hover:bg-slate-800 transition-colors duration-300 border-2 border-black"
           >
             Chat WhatsApp Kami
           </a>
